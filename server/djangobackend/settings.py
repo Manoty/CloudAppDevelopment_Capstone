@@ -27,9 +27,10 @@ DEBUG = True
 
 APPEND_SLASH = True
 
-ALLOWED_HOSTS = ['localhost','<Your app URL>']
+ALLOWED_HOSTS = []
 
-CSRF_TRUSTED_ORIGINS = ['<Your app URL>']
+CSRF_TRUSTED_ORIGINS = ['http://localhost:8000/']
+
 
 
 # Application definition
@@ -51,6 +52,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
 ]
 
 ROOT_URLCONF = 'djangobackend.urls'
